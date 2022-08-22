@@ -1,0 +1,342 @@
+@import "variables";
+@import "mixins";
+@import 'portfolio';
+@import 'contacts';
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 auto;
+    font-family: "Roboto", "sans-serif";
+    color: $color_3;
+    font-size: 14px;
+    line-height: 16px;
+    font-style: normal;
+}
+a {
+    text-decoration: none;
+    color: $color_3;
+}
+ul > li {
+    display: inline-block;
+}
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    @include container;
+}
+.header-block {
+    @include flex;
+    padding: 24px 0 25px;
+}
+.logo-blue {
+    color: $color_1;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+}
+.logo-black {
+    color: $color_3;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    padding-right: 93px;
+}
+.site-nav {
+    font-style: normal;
+    font-weight: 500;
+    & li {
+        padding-right: 50px;
+        color: $color_3;
+    }
+    & .link:hover {
+        color: $color_1;
+    }
+    & .current {
+        color: $color_1;
+    }
+}
+.contacts {
+    a {
+        color: $color_2;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    & a.tel {
+        margin-right: 30px;
+    }
+    & .fa-solid {
+        font-size: 16px;
+        margin-right: 5px;
+        color: $color_2;
+    }
+    & a:hover {
+        color: $color_1;
+    }
+    & i:hover {
+        color: $color_1;
+    }
+}
+
+// Hero
+
+.hero-block {
+    background-image: url("../img/hero.jpg");
+    background-color: rgba(47, 48, 58, 0.4);
+    background-blend-mode: multiply;
+    color: $color_4;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    padding: 200px 0;
+    & .hero {
+        text-align: center;
+    }
+    & .hero-title {
+        font-weight: 900;
+        font-size: 44px;
+        line-height: 60px;
+        text-align: center;
+        max-width: 50%;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+    & .button {
+        background: $color_1;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        color: $color_4;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 30px;
+        padding: 10px 32px;
+        border: none;
+    }
+    & .button:hover {
+        cursor: pointer;
+        background: $color_4;
+        color: $color_1;
+    }
+}
+// servises-block
+.services-title {
+    display: none;
+}
+.servises-block {
+    display: flex;
+    padding: 94px 0;
+    gap: 30px;
+
+    & .services-list {
+        width: 25%;
+    }
+
+    & .services_title {
+        font-weight: 700;
+        padding: 30px 0 10px;
+    }
+    & .services_text {
+        color: $color_2;
+        line-height: 24px;
+        padding-right: 20px;
+    }
+    & img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    & img:hover {
+        transform: scale(1.1);
+    }
+}
+
+// section with pictures
+.section-title {
+    color: $color_5;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}
+.section_service {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 94px;
+
+    & img {
+        object-fit: cover;
+        width: 100%;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    & img:hover {
+        transform: scale(1.2);
+        box-shadow: 0px 4px 4px rgba(33, 150, 243, 0.50);
+    }
+}
+// section_command
+.section_command {
+    background: #f5f4fa;
+    padding: 94px 0;
+
+    & .section-title {
+        color: $color_5;
+        font-size: 36px;
+        line-height: 42px;
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
+    & .command_block {
+        display: flex;
+        justify-content: space-between;
+
+        & .command_list {
+            background: $color_4;
+            text-align: center;
+            padding-bottom: 30px;
+            margin-right: 30px;
+        }
+        & .command_list:hover {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        & .name {
+            color: $color_5;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            padding: 20px 0 10px;
+        }
+        & .job {
+            color: $color_2;
+            line-height: 19px;
+            padding-bottom: 16px;
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+        & .fa-brands {
+            font-size: 20px;
+            padding: 7px;
+            border-radius: 50%;
+            margin-right: 7px;
+            color: $color_6;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+            & .fa-brands:hover {
+            background-color: $color_1;
+            color: $color_4;
+            }
+            & .fa-facebook-f {
+            padding: 7px 12px;
+            }
+            & .fa-linkedin-in, .fa-instagram {
+            padding: 7px 9px;
+            }
+        }
+    }
+
+
+// clients
+
+.clients {
+    padding: 94px 0;
+
+    & .cients-title {
+        color: $color_5;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    & .clients-block {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:30px;
+    }
+    & .client_img {
+        position: relative;
+    }
+    & .blue {
+        position: absolute;
+        left: 0;
+        opacity: 0%;  
+    }
+    & .blue:hover {
+        opacity: 100%;  
+    }
+}
+// footer
+.footer {
+    background: $bgr_color_2;
+    padding: 60px 0;
+    & .footer-flex {
+        display: flex;
+
+        & .logo-white {
+            color: $color_4;
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 31px;
+        }
+        & .footer-list {
+            padding-top: 20px;
+            padding-right: 70px;
+            & li {
+                display: block;
+            }
+            & .address {
+                color: $color_4;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+                padding-bottom: 9px;
+            }
+            & .contacts {
+                color: rgba(255, 255, 255, 0.6);
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+                padding-bottom: 9px;
+            }
+        }
+        & .icons-block h3 {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 16px;
+            color: $color_4;
+            text-transform: uppercase;
+            padding: 12px 0 20px 5px;
+        }
+        & .fa-brands {
+            font-size: 25px;
+            border: 1px solid $color_5;
+            padding: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: $color_4;
+            background-color: $color_5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        & .fa-brands:hover {
+            background-color: $color_1;
+            border: 1px solid $color_1;
+        }
+        & .fa-facebook-f {
+            padding: 12px 17px;
+        }
+        & .fa-linkedin-in, .fa-instagram {
+            padding: 12px 14px;
+        }
+    }
+}
